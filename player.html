@@ -1,18 +1,11 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width; initial-scale=0.5; maximum-scale=0.5; user-scalable=no" />
-        <!--
-        <meta name="viewport" content="initial-scale=1">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        -->
         <style> *{margin:0;padding:0;bottom:0;border:0;} </style>
         <script src="./lib/require.js"></script>
         <script type="text/javascript">
-            require({ paths:{ herlock:"./", lib:"./lib", src:"./module" } });
-            require([ "Player" ],function( Player ) {
+            __req.require({ paths:{ herlock:"./", lib:"./lib", src:"./src" } });
+            __req.require([ "Player" ],function( Player ){
 
                 // params
                 var params = (function(){
@@ -35,25 +28,6 @@
 
                 // player
                 player = new Player( mainJsURL, options );
-
-                // clear requirejs
-                window.requirejs = undefined;
-                window.require = undefined;
-                window.define = undefined;
-
-
-                if( options.useViewCSS || options.useViewCanvas ) {
-                    // 取り急ぎスマホ向け
-                    // screen.availHeight?
-
-
-//                    // scroll禁止
-                    options.container.style.overflow = "hidden";
-                    document.body.style.overflow = "hidden";
-
-
-                    return;
-                }
 
                 // adjust container size
                 adjustContainerSize();

@@ -1,6 +1,6 @@
-define([
+__req.define([
     "lib/Class",
-    "module/common/NJCommon"
+    "src/common/NJCommon"
 ], function( Class, NJCommon ) {
 
     window.__herlock_ctx = null;
